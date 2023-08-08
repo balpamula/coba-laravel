@@ -5,6 +5,7 @@
       <h1 class="h2">Posts oleh : {{ auth()->user()->name }}</h1>
     </div>
     <div class="table-responsive">
+      <a href="/dashboard/posts/create" class="btn btn-primary"><span data-feather="plus-circle"></span> Tambah Posts</a>
         <table class="table table-striped table-sm">
             <thead>
             <tr>
