@@ -4,8 +4,12 @@
     <div class="row my-3">
         <div class="col-lg-12">
             <a href="/dashboard/posts" class="btn btn-primary"><span data-feather="arrow-left"></span> Kembali</a>
-            <a href="" class="btn btn-warning"><span data-feather="edit"></span> Edit</a>
-            <a href="" class="btn btn-danger"><span data-feather="trash-2"></span> Hapus</a>
+            <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning"><span data-feather="edit"></span> Edit</a>
+            <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                @method('delete')
+                @csrf 
+                <button class="btn btn-danger" onclick="return confirm('Apakah anda yakin untuk menghapus data?')"><span data-feather="trash-2"></span> Hapus</button>
+              </form>
             
         </div>
     </div>
