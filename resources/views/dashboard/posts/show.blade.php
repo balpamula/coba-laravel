@@ -9,8 +9,7 @@
                 @method('delete')
                 @csrf 
                 <button class="btn btn-danger" onclick="return confirm('Apakah anda yakin untuk menghapus data?')"><span data-feather="trash-2"></span> Hapus</button>
-              </form>
-            
+            </form>
         </div>
     </div>
 

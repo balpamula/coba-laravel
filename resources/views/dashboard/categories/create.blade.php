@@ -4,6 +4,11 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Tambah Kategori Baru</h1>
 </div>
+<div class="row my-3">
+    <div class="col-lg-12">
+        <a href="/dashboard/categories" class="btn btn-primary"><span data-feather="arrow-left"></span> Kembali</a>
+    </div>
+</div>
 <div class="div col-lg-8">
     <form method="post" action="/dashboard/categories" class="mb-5" enctype="multipart/form-data">
         @csrf
