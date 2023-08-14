@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashPostController;
 use App\Models\Category;
@@ -65,4 +66,5 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard/posts/checkSlug', [DashPostController::class, 'checkSlug']);
 Route::resource('/dashboard/posts', DashPostController::class)->middleware('auth');
 
+Route::get('/dashboard/categories/checkCatSlug', [AdminCategoryController::class, 'checkCatSlug']);
 Route::resource('/dashboard/categories', AdminCategoryController::class)->middleware('admin');

@@ -13,7 +13,10 @@
     @endif
 
     <div class="table-responsive col-lg-6">
-        <a href="/dashboard/categories/create" class="btn btn-primary"><span data-feather="plus-circle"></span> Tambah Posts</a>
+        <a href="/dashboard/categories/create" class="btn btn-primary"><span data-feather="plus-circle"></span> Tambah Kategori</a>
+        {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+            <span data-feather="plus-circle"></span> Tambah Posts
+        </button> --}}
             <table class="table table-striped table-sm my-3">
                 <thead>
                     <tr>
@@ -28,12 +31,12 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $category->name }}</td>
                         <td>
-                            <a href="/dashboard/categories/{{ $category->slug }}" class="badge bg-info"><span data-feather="eye"></span></a>
+                            {{-- <a href="/dashboard/categories/{{ $category->slug }}" class="badge bg-info"><span data-feather="eye"></span></a> --}}
                             <a href="/dashboard/categories/{{ $category->slug }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
                             <form action="/dashboard/categories/{{ $category->slug }}" method="post" class="d-inline">
                             @method('delete')
                             @csrf 
-                                <button class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin untuk menghapus data?')"><span data-feather="trash-2"></span></button>
+                                <button class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin untuk menghapus {{ $category->title }}?')"><span data-feather="trash-2"></span></button>
                             </form>
                         </td>
                     </tr>
